@@ -1,0 +1,67 @@
+﻿@model ProgrammingClubM.Models.MembershipModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MembershipModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMembership)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMembership)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMember)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMember)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMembershipType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMembershipType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.IDMembership  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

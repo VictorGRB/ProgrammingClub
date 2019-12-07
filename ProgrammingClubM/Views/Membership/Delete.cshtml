@@ -1,0 +1,73 @@
+﻿@model ProgrammingClubM.Models.MembershipModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MembershipModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMembership)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMembership)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMember)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMember)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMembershipType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMembershipType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

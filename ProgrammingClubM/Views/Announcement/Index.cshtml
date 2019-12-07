@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ProgrammingClubM.Models.AnnouncementModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDAnnouncement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValidFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValidTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tags)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDAnnouncement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValidTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tags)
+        </td>
+        <td>
+            @{ 
+                if ((User.IsInRole("Admin") || User.IsInRole("User") && item.Tags.Contains(User.Identity.Name)&& item.Title.Contains(User.Identity.Name)))
+                {
+
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IDAnnouncement })
+                }
+           }                                                                    
+            @Html.ActionLink("Details", "Details", new { id = item.IDAnnouncement }) 
+
+            @{ if ((User.IsInRole("Admin") && item.Tags.Contains(User.Identity.Name)&& item.Title.Contains(User.Identity.Name)))
+                {
+            @Html.ActionLink("Delete", "Delete", new { id = item.IDAnnouncement })
+                    }
+                }
+        </td>
+    </tr>
+}
+
+</table>

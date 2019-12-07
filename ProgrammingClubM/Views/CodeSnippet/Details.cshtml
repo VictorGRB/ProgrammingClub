@@ -1,0 +1,83 @@
+﻿@model ProgrammingClubM.Models.CodeSnippetModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CodeSnippetModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCodeSnippet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDCodeSnippet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDMember)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMember)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Revision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Revision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDSnippetPreviousVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDSnippetPreviousVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTimeAdded)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTimeAdded)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsPublished)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsPublished)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.IDCodeSnippet  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
